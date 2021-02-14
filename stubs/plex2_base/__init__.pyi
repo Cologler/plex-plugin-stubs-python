@@ -5,3 +5,6 @@
 #
 # ----------
 
+from plex2_shared import (
+    Log
+)
