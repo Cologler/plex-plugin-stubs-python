@@ -12,3 +12,6 @@ class ConstantGroup:
     @classmethod
     def lock(cls):
         ...
+
+class Serializable:
+    ...
