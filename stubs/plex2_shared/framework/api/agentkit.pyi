@@ -7,16 +7,24 @@
 
 from typing import *
 
+from ..objects import MediaContainer
+
 from .base import BaseKit
+
+class MediaContentsDirectory:
+    def __init__(self, core, path, readonly=True): ...
+    def __contains__(self, item): ...
+    def __getitem__(self, item): ...
+    def __setitem__(self, item, data): ...
 
 class MediaStream:
     def __init__(self, core, el): ...
 
 class MediaPart:
     streams: List[MediaStream]
-    thumbs: Union[MediaContentsDirectory, FakeMediaObject]
-    art: Union[MediaContentsDirectory, FakeMediaObject]
-    subtitles: Union[MediaContentsDirectory, FakeMediaObject]
+    thumbs: Union[MediaContentsDirectory]
+    art: Union[MediaContentsDirectory]
+    subtitles: Union[MediaContentsDirectory]
     def __init__(self, core, el): ...
 
 class Setting(object):
@@ -96,8 +104,9 @@ class Media:
     class PhotoAlbum(MediaObject): ...
     class Photo(MediaObject): ...
 
+TMedia = TypeVar('TMedia')
 
-class BaseAgent:
+class BaseAgent(Generic[TMedia]):
     name: str
     languages: List[str]
     primary_provider: bool
@@ -107,19 +116,25 @@ class BaseAgent:
     persist_stored_files: bool
     version: int
 
-    def search(self, results, media, lang):
+    def search(self, results: MediaContainer, media: TMedia, lang: Any, *,
+               tree: MediaTree, manual: bool, primary: bool):
         '''
-        Functions that agents should implement
+        Functions that agents should implement.
+
+        all kwargs are optional like overload.
         '''
         ...
 
-    def update(self, metadata, media, lang):
+    def update(self, metadata, media: MediaTree, lang: Any, *,
+               force, child_guid, child_id, periodic, prefs: dict):
         '''
-        Functions that agents should implement
+        Functions that agents should implement.
+
+        all kwargs are optional like overload.
         '''
         ...
 
-class TV_Shows(BaseAgent):
+class TV_Shows(BaseAgent[Media.TV_Show]):
     ...
 
 class Movies(BaseAgent):
