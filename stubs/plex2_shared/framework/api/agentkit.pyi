@@ -137,16 +137,16 @@ class BaseAgent(Generic[TMedia]):
 class TV_Shows(BaseAgent[Media.TV_Show]):
     ...
 
-class Movies(BaseAgent):
+class Movies(BaseAgent[Media.Movie]):
     ...
 
-class Artist(BaseAgent):
+class Artist(BaseAgent[Media.Artist]):
     ...
 
-class Album(BaseAgent):
+class Album(BaseAgent[Media.Album]):
     ...
 
-class Photos(BaseAgent):
+class Photos(BaseAgent[Media.Photo]):
     ...
 
 class AgentKit(BaseKit):
