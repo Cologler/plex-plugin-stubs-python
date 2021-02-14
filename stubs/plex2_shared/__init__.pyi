@@ -8,7 +8,7 @@
 # the list is sorted by class DevKit:
 # TODO: .framework.api.core
 from .framework.api.runtimekit import Plugin, Platform, Route, Request, Response, Prefs
-# TODO: .framework.api.locale
+from .framework.api.localekit import Locale, L, F
 # TODO: .framework.api.parse
 from .framework.api.parsekit import JSON, Plist, RSS, YAML, XML, HTML
 # TODO: .framework.api.template
