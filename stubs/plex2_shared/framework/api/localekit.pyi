@@ -7,13 +7,13 @@
 
 from typing import *
 
-from ..components.localization import LocalString, LocalStringFormatter
+from ..components.localization import LocalString, LocalStringFormatter, Language, CountryCodes
 
 from .base import BaseKit
 
 class LocaleKit(BaseKit):
-    Language: str
-    CountryCodes: str
+    Language: Language
+    CountryCodes: CountryCodes
     DefaultLocale: str
 
     @property
