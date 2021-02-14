@@ -9,6 +9,62 @@ from typing import *
 
 from .base import BaseKit
 
+class MediaObject(object):
+    """
+    A MediaObject represents a media item discovered by PMS and encapsulates any information provided by the server.
+
+    It is intended to provide hints to metadata agents when finding metadata to download.
+    """
+    primary_agent: Any
+    primary_metadata: Any
+    filename: Any
+    guid: Any
+    parent_metadata: Any
+    tree: Any
+    id: Any
+    hash: Any
+    originally_available_at: Any
+
+class Media(object):
+    @classmethod
+    def TreeForDatabaseID(cls, dbid, level_names=[], host='127.0.0.1', parent_id=None, level_attribute_keys=[]):
+        ...
+
+    class Movie(MediaObject):
+        primary_metadata: Any
+        name: Any
+        openSubtitlesHash: Any
+        year: Any
+        duration: Any
+
+    class TV_Show(MediaObject):
+        show: Any
+        season: Any
+        episode: Any
+        name: Any
+        openSubtitlesHash: Any
+        year: Any
+        duration: Any
+        episodic: Any
+
+    class Album(MediaObject):
+        name: Any
+        artist: Any
+        album: Any
+        track: Any
+        index: Any
+        parentGUID = None
+
+    class Artist(MediaObject):
+        artist: Any
+        album: Any
+        track: Any
+        index: Any
+
+    class PhotoAlbum(MediaObject): ...
+    class Photo(MediaObject): ...
+
+
 class BaseAgent:
     name: str
     languages: List[str]
