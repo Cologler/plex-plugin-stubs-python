@@ -9,6 +9,37 @@ from typing import *
 
 from .base import BaseKit
 
+class MediaStream:
+    def __init__(self, core, el): ...
+
+class MediaPart:
+    streams: List[MediaStream]
+    thumbs: Union[MediaContentsDirectory, FakeMediaObject]
+    art: Union[MediaContentsDirectory, FakeMediaObject]
+    subtitles: Union[MediaContentsDirectory, FakeMediaObject]
+    def __init__(self, core, el): ...
+
+class Setting(object):
+    id: Any
+    value: Any
+    def __init__(self, core, el): ...
+
+class MediaItem(object):
+    parts: List[MediaPart]
+    def __init__(self, core, el): ...
+
+class MediaDict(dict):
+    def __contains__(self, item) -> bool: ...
+    def __getitem__(self, item) -> Any: ...
+
+class MediaTree:
+    items: List[MediaItem]
+    settings: Dict[Any, Setting]
+    children: List[MediaTree]
+
+    def all_parts(self) -> List[MediaPart]:
+        """ Return an array of all parts owned by this item and its' sub-items """
+
 class MediaObject:
     """
     A MediaObject represents a media item discovered by PMS and encapsulates any information provided by the server.
@@ -27,7 +58,8 @@ class MediaObject:
 
 class Media:
     @classmethod
-    def TreeForDatabaseID(cls, dbid, level_names=[], host='127.0.0.1', parent_id=None, level_attribute_keys=[]):
+    def TreeForDatabaseID(cls, dbid, level_names=[],
+                          host='127.0.0.1', parent_id=None, level_attribute_keys=[]) -> MediaTree:
         ...
 
     class Movie(MediaObject):
@@ -75,7 +107,7 @@ class BaseAgent:
     persist_stored_files: bool
     version: int
 
-    def search(self, media, lang):
+    def search(self, results, media, lang):
         '''
         Functions that agents should implement
         '''
