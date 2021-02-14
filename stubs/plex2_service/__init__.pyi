@@ -11,3 +11,7 @@ from plex2_modern import *
 
 # ServicePolicy.environment
 __name__ = '__service__'
+
+from plex2_shared import (
+    Platform, Prefs,
+)
