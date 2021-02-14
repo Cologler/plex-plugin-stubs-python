@@ -7,11 +7,10 @@
 
 # the list is sorted by class DevKit:
 # TODO: .framework.api.core
-from .framework.api.runtimekit import (
-    Plugin, Platform, Route, Request, Response, Prefs
-)
+from .framework.api.runtimekit import Plugin, Platform, Route, Request, Response, Prefs
 # TODO: .framework.api.locale
 # TODO: .framework.api.parse
+from .framework.api.parsekit import JSON, Plist, RSS, YAML, XML, HTML
 # TODO: .framework.api.template
 # TODO: .framework.api.model
 from .framework.api.agentkit import Agent
