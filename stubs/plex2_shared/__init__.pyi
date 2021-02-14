@@ -5,27 +5,28 @@
 #
 # ----------
 
-# TODO: .kits.core
-# TODO: .kits.locale
-# TODO: .kits.parse
-# TODO: .kits.template
-# TODO: .kits.model
-# TODO: .kits.resource
-# TODO: .kits.network
-# TODO: .kits.message
-# TODO: .kits.service
-# TODO: .kits.data
-# TODO: .kits.player
-# TODO: .kits.thread
-# TODO: .kits.object
-# TODO: .kits.const
-# TODO: .kits.log
-# TODO: .kits.util
-# TODO: .kits.stream
-# TODO: .kits.cloud
-# TODO: .kits.crypto
-from .kits.runtime import (
+# the list is sorted by class DevKit:
+# TODO: .framework.api.core
+# TODO: .framework.api.locale
+# TODO: .framework.api.parse
+# TODO: .framework.api.template
+# TODO: .framework.api.model
+# TODO: .framework.api.resource
+# TODO: .framework.api.network
+# TODO: .framework.api.message
+# TODO: .framework.api.service
+# TODO: .framework.api.data
+# TODO: .framework.api.player
+# TODO: .framework.api.thread
+# TODO: .framework.api.object
+# TODO: .framework.api.const
+# TODO: .framework.api.log
+# TODO: .framework.api.util
+# TODO: .framework.api.stream
+# TODO: .framework.api.cloud
+# TODO: .framework.api.crypto
+from .framework.api.runtimekit import (
     Plugin, Platform, Route, Request, Response, Prefs
 )
-from .kits.agents import Agent
-from .kits.helper import Helper
+from .framework.api.agentkit import Agent
+from .framework.api.helperkit import Helper
