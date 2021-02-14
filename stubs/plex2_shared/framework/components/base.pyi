@@ -5,10 +5,10 @@
 #
 # ----------
 
-class CoreObject:
-    pass
+from ..base import CoreObject
 
-class ConstantGroup:
-    @classmethod
-    def lock(cls):
-        ...
+class BaseComponent(CoreObject):
+    ...
+
+class SubComponent:
+    ...
