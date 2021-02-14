@@ -10,5 +10,5 @@ from plex2_code import *
 
 from plex2_shared import (
     Platform, Prefs, Request,
-    Agent,
+    Agent, Media,
 )

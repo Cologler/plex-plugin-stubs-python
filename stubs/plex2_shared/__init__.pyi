@@ -13,7 +13,7 @@ from .framework.api.localekit import Locale, L, F
 from .framework.api.parsekit import JSON, Plist, RSS, YAML, XML, HTML
 # TODO: .framework.api.template
 # TODO: .framework.api.model
-from .framework.api.agentkit import Agent
+from .framework.api.agentkit import Agent, Media
 # TODO: .framework.api.resource
 # TODO: .framework.api.network
 from .framework.api.networkkit import Network, HTTP, XMLRPC

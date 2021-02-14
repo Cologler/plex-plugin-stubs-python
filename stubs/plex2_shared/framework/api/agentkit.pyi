@@ -9,7 +9,7 @@ from typing import *
 
 from .base import BaseKit
 
-class MediaObject(object):
+class MediaObject:
     """
     A MediaObject represents a media item discovered by PMS and encapsulates any information provided by the server.
 
@@ -25,7 +25,7 @@ class MediaObject(object):
     hash: Any
     originally_available_at: Any
 
-class Media(object):
+class Media:
     @classmethod
     def TreeForDatabaseID(cls, dbid, level_names=[], host='127.0.0.1', parent_id=None, level_attribute_keys=[]):
         ...
