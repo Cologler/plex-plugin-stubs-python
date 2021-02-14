@@ -17,6 +17,7 @@ from .framework.api.runtimekit import (
 from .framework.api.agentkit import Agent
 # TODO: .framework.api.resource
 # TODO: .framework.api.network
+from .framework.api.networkkit import Network, HTTP, XMLRPC
 # TODO: .framework.api.message
 # TODO: .framework.api.service
 # TODO: .framework.api.data
